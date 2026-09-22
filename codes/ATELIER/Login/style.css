@@ -1,0 +1,263 @@
+* {
+  box-sizing: border-box;
+  }
+
+body {
+font-family: "Inter", sans-serif;
+}
+
+.login-container {
+width: 480px;
+max-width: 100%;
+overflow: hidden;
+}
+
+.p-80 {
+padding: 80px;
+}
+
+.bb-2 {
+border-bottom: 2px solid black;
+}
+
+.section-1 h1 {
+font-size: 32px;
+line-height: 38.4px;
+letter-spacing: 7.2px;
+color: #1A1C1B;
+margin: 0;
+}
+
+.section-1 span {
+line-height: 25.6px;
+color: #444748;
+}
+
+.section-2 {
+font-size: 12px;
+line-height: 12px;
+letter-spacing: 1.2px;
+}
+
+.label {
+font-size: 12px;
+line-height: 12px;
+letter-spacing: 1.2px;
+color: #444748;
+}
+
+#email,
+#password {
+width: 100%;
+outline: none;
+min-width: 0;
+}
+
+#email::placeholder {
+font-weight: 400;
+font-size: 16px;
+line-height: 100%;
+color: #44474880;
+}
+
+#password::placeholder {
+font-weight: 400;
+font-size: 16px;
+line-height: 100%;
+color: #44474880;
+}
+
+.form-check-input {
+border-color: #C4C7C7;
+}
+
+.form-check-label,
+.link {
+line-height: 25.6px;
+color: #444748;
+}
+
+.section-3 button,
+.section-3 div span {
+font-size: 12px;
+letter-spacing: 1.2px;
+}
+
+.section-3 div span {
+color: #444748;
+}
+
+.google-icon {
+width: 40px;
+height: 40px;
+object-fit: contain;
+}
+
+/* Bootstrap validation colors */
+#email.is-valid,
+#password.is-valid {
+border-bottom-color: var(--bs-form-valid-border-color) !important;
+}
+
+#email.is-invalid,
+#password.is-invalid {
+border-bottom-color: var(--bs-form-invalid-border-color) !important;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+
+```
+.login-container {
+    width: 460px;
+}
+
+.p-80 {
+    padding: 60px;
+}
+```
+
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+
+```
+.login-container {
+    width: calc(100% - 32px);
+}
+
+.p-80 {
+    padding: 45px 35px;
+}
+
+.section-1 h1 {
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 5px;
+}
+
+.section-1 span {
+    font-size: 14px !important;
+    line-height: 22px;
+}
+
+.section-2 {
+    font-size: 11px;
+    letter-spacing: 0.9px;
+}
+
+.form-check-label,
+.link {
+    font-size: 13px;
+}
+
+.section-3 div span {
+    font-size: 10px;
+    letter-spacing: 0.8px;
+}
+
+.google-icon {
+    width: 32px;
+    height: 32px;
+}
+```
+
+}
+
+/* Small mobile */
+@media (max-width: 400px) {
+
+```
+.login-container {
+    width: calc(100% - 24px);
+}
+
+.p-80 {
+    padding: 32px 20px;
+}
+
+.section-1 h1 {
+    font-size: 25px;
+    line-height: 31px;
+    letter-spacing: 4px;
+}
+
+.section-1 span {
+    font-size: 13px !important;
+}
+
+.section-2 {
+    font-size: 10px;
+    letter-spacing: 0.7px;
+}
+
+.label {
+    font-size: 11px;
+}
+
+#email::placeholder {
+    font-size: 14px;
+}
+
+#password::placeholder {
+    font-size: 12px;
+}
+
+.form-check-label,
+.link {
+    font-size: 12px;
+}
+
+.section-3 div span {
+    font-size: 9px;
+    letter-spacing: 0.5px;
+}
+
+.google-icon {
+    width: 28px;
+    height: 28px;
+}
+```
+
+}
+
+/* Very small mobile */
+@media (max-width: 330px) {
+
+```
+.login-container {
+    width: calc(100% - 16px);
+}
+
+.p-80 {
+    padding: 25px 15px;
+}
+
+.section-1 h1 {
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: 3px;
+}
+
+.section-2 {
+    font-size: 9px;
+    letter-spacing: 0.4px;
+}
+
+.form-check-label,
+.link {
+    font-size: 11px;
+}
+
+.section-3 div span {
+    font-size: 8px;
+}
+
+.google-icon {
+    width: 24px;
+    height: 24px;
+}
+```
+
+}

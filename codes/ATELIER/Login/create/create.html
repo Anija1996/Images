@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light d-flex align-items-center justify-content-center min-vh-100">
+    <div class="login-container border bg-white p-80">
+        <div class="d-flex flex-column gap-4">
+            <div class="section-1 text-center d-flex flex-column gap-2">
+                <h1 class="fw-normal">ATELIER</h1>
+                <span class="fs-6 fw-normal">Create your account</span>
+            </div>
+            <div class="section-2 row align-items-center justify-content-center fw-semibold">
+                <div class="col-6 text-center text-nowrap pb-2">
+                    <a class="text-secondary text-decoration-none" href="../Sign-In.html">SIGN IN</a>
+                </div>
+                <div class="col-6 bb-2 text-center text-nowrap pb-2">
+                    <a class="text-dark text-decoration-none" href="create.html">CREATE ACCOUNT</a>
+                </div>
+            </div>
+        </div>
+        <form id="create-account-form" novalidate>
+            <div class="d-flex flex-column gap-4 mt-4">
+                <div class="row g-4">
+                    <div class="col-12 col-md-6">
+                        <input type="text" id="firstName" name="firstName" placeholder="First Name" class="border-0 border-bottom">
+                        <p id="firstName-error"></p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" class="border-0 border-bottom">
+                        <p id="lastName-error"></p>
+                    </div>
+                </div>
+                <div>
+                    <input type="email" id="email" name="email" placeholder="Email Address" class="border-0 border-bottom">
+                    <p id="email-error"></p>
+                </div>
+                <div>
+                    <input type="password" id="password" name="password" placeholder="Password" class="border-0 border-bottom">
+                    <span id="strength"></span>
+                    <p id="pswd-error"></p>
+                </div>
+                <div>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" class="border-0 border-bottom">
+                    <p id="conf-error"></p>
+                </div>
+            </div>
+            <div class="d-flex flex-column w-100 mt-4">
+                <div class="form-check d-flex align-items-start gap-2 mb-3">
+                    <input class="form-check-input flex-shrink-0" type="checkbox" id="newsletter">
+                    <label class="form-check-label" for="newsletter">Subscribe to our newsletter for exclusive offers and updates.</label>
+                </div>
+                <div class="form-check d-flex align-items-start gap-2 mb-3">
+                    <input class="form-check-input flex-shrink-0" type="checkbox" id="terms">
+                    <label class="form-check-label" for="terms">I agree to the <a href="#" class="text-dark text-decoration-underline">Terms and Conditions</a> and <a href="#" class="text-dark text-decoration-underline">Privacy Policy</a>.</label>
+                </div>
+                <button type="submit" class="btn btn-dark fw-semibold rounded-0 px-3 py-2 w-100">CREATE ACCOUNT</button>
+                <p id="message"></p>
+            </div>
+        </form>
+        <div class="section-3 d-flex flex-column w-100">
+            <div class="d-flex align-items-center gap-3 my-3">
+                <hr class="flex-grow-1">
+                <span class="fw-semibold">OR CONTINUE WITH</span>
+                <hr class="flex-grow-1">
+            </div>
+            <button type="button" class="btn bg-transparent border fw-semibold rounded-0 py-2 px-3 w-100 d-flex align-items-center justify-content-center gap-2">
+                <img src="../images/google.png" class="google-icon" alt="Google">
+                GOOGLE
+            </button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

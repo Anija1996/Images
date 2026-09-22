@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATELIER</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Liberation+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-----Navigation------>
+    <nav class="navbar navbar-expand-md bg-white border-bottom">
+        <div class="container-fluid navbar-container px-3 px-sm-4 px-lg-5">
+            <!-----Mobile Menu Button------>
+            <button class="navbar-toggler d-sm-none border-0 shadow-none p-0" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <!-----Desktop Left Navigation------>
+            <div class="container-left d-none d-sm-flex align-items-center">
+                <a href="#" class="nav-link">SHOP</a>
+                <a href="#" class="nav-link">CATEGORIES</a>
+                <a href="#" class="nav-link">ABOUT</a>
+            </div>
+            <!-----Logo------>
+            <div class="container-center">
+                <a href="#" class="navbar-brand">ATELIER</a>
+            </div>
+            <!-----Desktop Right Navigation------>
+            <div class="container-right d-none d-lg-flex align-items-center justify-content-end">
+                <button class="btn icon-btn" aria-label="Search">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+                <button class="btn icon-btn" aria-label="Wishlist">
+                    <span class="material-symbols-outlined">favorite</span>
+                </button>
+                <button class="btn icon-btn" id="shopbtn" aria-label="Shopping bag">
+                    <span class="material-symbols-outlined">shopping_bag</span>
+                </button>
+                <a href="../Login/Sign-In.html" class="nav-link" id="login-link">LOGIN</a>
+            </div>
+            <!-----Mobile Shopping Bag------>
+            <button class="btn icon-btn d-lg-none p-0" aria-label="Shopping bag">
+                <span class="material-symbols-outlined">shopping_bag</span>
+            </button>
+        </div>
+        <!-----Mobile Navigation------>
+        <div class="collapse d-sm-none" id="mobileMenu">
+            <div class="mobile-menu-container">
+                <a href="#" class="mobile-nav-link">SHOP</a>
+                <a href="#" class="mobile-nav-link">CATEGORIES</a>
+                <a href="#" class="mobile-nav-link">ABOUT</a>
+            </div>
+        </div>
+    </nav>
+    <!-----Main Content------>
+    <main>
+        <!-----Hero Section------>
+        <header class="hero-section">
+            <div id="heroCarousel" class="carousel slide">
+                <!-----Carousel Indicators------>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <!-----Carousel Content------>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="hero-image">
+                            <!-----Desktop Hero Image------>
+                            <img src="images/Header.png" class="hero-desktop-image">
+                            <!-----Mobile Hero Image------>
+                            <img src="images/header-mobile.png" class="hero-mobile-image">
+                            <!-----Hero Content------>
+                            <div class="hero-container">
+                                <!-----Desktop Hero Content------>
+                                <div class="hero-desktop-content">
+                                    <p class="hero-eyebrow">NEW COLLECTION</p>
+                                    <h1 class="hero-title">Timeless Style</h1>
+                                    <a href="#" class="hero-button">EXPLORE COLLECTION</a>
+                                </div>
+                                <!-----Mobile Hero Content------>
+                                <div class="hero-mobile-content">
+                                    <h1 class="hero-mobile-title">Timeless Style</h1>
+                                    <p class="hero-mobile-description">Curated pieces for a life well-lived. Embrace the elegance of understatement.</p>
+                                    <a href="#" class="hero-button">EXPLORE COLLECTION</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-----Shipping Message------>
+                        <div class="hero-text">
+                            <p>Complimentary global shipping and returns on all orders over $300.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-----Carousel Previous Button------>
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <!-----Carousel Next Button------>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </header>
+        <!-----Essential Categories------>
+        <section class="essential-section">
+            <!-----Desktop Essentials------>
+            <div class="desktop-essentials container-fluid">
+                <div class="row g-4">
+                    <!-----Essentials Large Image------>
+                    <div class="col-lg-8">
+                        <div class="essential-large-card">
+                            <img src="images/Essentials.png" class="w-100">
+                            <a href="#" class="essential-large-link">Essentials</a>
+                        </div>
+                    </div>
+                    <!-----Essentials Small Images------>
+                    <div class="col-lg-4">
+                        <div class="essential-small-column">
+                            <!-----Shirts------>
+                            <div class="essential-small-card">
+                                <img src="images/Shirt.png"  class="w-100">
+                                <a href="#" class="essential-small-link">Shirts</a>
+                            </div>
+                            <!-----Jeans------>
+                            <div class="essential-small-card">
+                                <img src="images/Jeans.png"  class="w-100">
+                                <a href="#" class="essential-small-link">Jeans</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-----Mobile Essentials------>
+            <div class="mobile-essentials">
+                <div class="section-heading">
+                    <h2>Essentials</h2>
+                    <hr>
+                </div>
+                <!-----Jeans------>
+                <div class="mobile-essential-card">
+                    <img src="images/jeans-mobile.png" class="w-100">
+                    <div class="mobile-essential-overlay">
+                        <p>Jeans</p>
+                        <a href="#">SHOP NOW</a>
+                    </div>
+                </div>
+                <!-----Shirts------>
+                <div class="mobile-essential-card">
+                    <img src="images/shirt-mobile.png" class="w-100">
+                    <div class="mobile-essential-overlay">
+                        <p>Shirts</p>
+                        <a href="#">SHOP NOW</a>
+                    </div>
+                </div>
+                <!-----Outerwear------>
+                <div class="mobile-essential-card">
+                    <img src="images/outwear-mobile.png" class="w-100">
+                    <div class="mobile-essential-overlay">
+                        <p>Outerwear</p>
+                        <a href="#">SHOP NOW</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-----New Arrivals------>
+        <section class="new-arrivals">
+            <!-----New Arrivals Container------>
+            <div class="container-fluid arrivals-container">
+                <!-----Section Header------>
+                <div class="arrivals-header">
+                    <h2>New Arrivals</h2>
+                    <a href="#">VIEW ALL</a>
+                </div>
+                <!-----Desktop Products------>
+                <div class="desktop-products row g-4">
+                    <!-----Product 1------>
+                    <div class="col-md-6 col-lg-3">
+                        <a href="../Product-View/product-view.html" class="text-decoration-none text-dark">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="images/Structured Linen Blazer.png" class="w-100">
+                                    <span class="new-badge">NEW</span>
+                                </div>
+                                <div class="product-info">
+                                    <p class="product-name">Structured Linen Blazer</p>
+                                    <p class="product-price">$495</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-----Product 2------>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/Fluid Silk Blouse.png" class="w-100">
+                            </div>
+                            <div class="product-info">
+                                <p class="product-name">Fluid Silk Blouse</p>
+                                <p class="product-price">$280</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-----Product 3------>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/Wide-Leg Wool Trousers.png" class="w-100">
+                            </div>
+                            <div class="product-info">
+                                <p class="product-name">Wide-Leg Wool Trousers</p>
+                                <p class="product-price">$340</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-----Product 4------>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/Unstructured Cashmere Coat.png"  class="w-100">
+                            </div>
+                            <div class="product-info">
+                                <p class="product-name">Unstructured Cashmere Coat</p>
+                                <p class="product-price">$850</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-----Mobile Products------>
+                <div class="mobile-products row g-3">
+                    <!-----Mobile Product 1------>
+                    <div class="col-6">
+                        <div class="mobile-product-card">
+                            <img src="images/Classic Silk Blouse.jpg"  class="w-100">
+                            <p class="mobile-product-name">Classic Silk Blouse</p>
+                            <p class="mobile-product-price">$245</p>
+                        </div>
+                    </div>
+                    <!-----Mobile Product 2------>
+                    <div class="col-6">
+                        <div class="mobile-product-card">
+                            <img src="images/Tailored Wool Trousers.jpg" class="w-100">
+                            <p class="mobile-product-name">Tailored Wool Trousers</p>
+                            <p class="mobile-product-price">$320</p>
+                        </div>
+                    </div>
+                    <!-----Mobile Product 3------>
+                    <div class="col-6">
+                        <div class="mobile-product-card">
+                            <img src="images/cashmere.jpg"  class="w-100">
+                            <p class="mobile-product-name">Cashmere Knit</p>
+                            <p class="mobile-product-price">$450</p>
+                        </div>
+                    </div>
+                    <!-----Mobile Product 4------>
+                    <div class="col-6">
+                        <div class="mobile-product-card">
+                            <img src="images/tote.jpg"  class="w-100">
+                            <p class="mobile-product-name">Leather Tote</p>
+                            <p class="mobile-product-price">$680</p>
+                        </div>
+                    </div>
+                </div>
+                <!-----Mobile View All------>
+                <div class="mobile-view-all">
+                    <a href="#">VIEW ALL ARRIVALS</a>
+                </div>
+            </div>
+        </section>
+        <!-----Trending Section------>
+        <section class="trending-section container-fluid">
+            <div class="row g-0">
+                <!-----Trending Image------>
+                <div class="col-md-7">
+                    <div class="trending-image">
+                        <img src="images/Trending Picks Editorial.png"  class="w-100">
+                    </div>
+                </div>
+                <!-----Trending Content------>
+                <div class="col-md-5">
+                    <div class="trending-content">
+                        <p class="trending-eyebrow">CURATED SELECTION</p>
+                        <h2>Trending Picks<br>For The Season</h2>
+                        <p class="trending-description">Discover pieces defined by their meticulous craftsmanship and understated elegance. Designed to transcend seasons, our latest curation offers the perfect balance of form, function, and unparalleled quality.</p>
+                        <a href="#" class="lookbook-button">VIEW THE LOOKBOOK</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-----Desktop Footer------>
+    <footer class="desktop-footer">
+        <div class="container-fluid">
+            <div class="row align-items-start">
+                <!-----Footer Logo------>
+                <div class="col-md-6">
+                    <a href="#" class="footer-logo">ATELIER</a>
+                    <p class="footer-copy">© 2024 ATELIER. DEFINING QUIET LUXURY.</p>
+                </div>
+                <!-----Footer Navigation------>
+                <div class="col-md-6">
+                    <nav class="footer-navigation">
+                        <a href="#">SUSTAINABILITY</a>
+                        <a href="#">SHIPPING</a>
+                        <a href="#">CONTACT</a>
+                        <a href="#">PRIVACY</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-----Mobile Footer------>
+    <footer class="mobile-footer">
+        <a href="#" class="footer-logo">ATELIER</a>
+        <p class="footer-copy">© 2024 ATELIER. DEFINING QUIET LUXURY.</p>
+        <nav class="mobile-footer-navigation">
+            <a href="#">SUSTAINABILITY</a>
+            <a href="#">SHIPPING</a>
+            <a href="#">CONTACT</a>
+            <a href="#">PRIVACY</a>
+        </nav>
+    </footer>
+    <!-----Bootstrap JavaScript------>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+        const loginLink = document.querySelector("#login-link");
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        if (currentUser) {
+            loginLink.innerHTML = '<span class="material-symbols-outlined">person</span>';
+            loginLink.href = "#";
+            loginLink.setAttribute("aria-label", "Account");
+        }
+
+        const shopBtn = document.querySelector("#shopbtn");
+        shopBtn.addEventListener('click',()=>{
+            window.location.href = "../Cart/cart.html";
+
+        })
+    </script>
+</body>
+</html>
