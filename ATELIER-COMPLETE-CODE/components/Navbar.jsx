@@ -45,7 +45,7 @@ function Navbar() {
 
                 <div className="container-left d-none d-sm-flex align-items-center">
                     <NavLink to="/products" className="nav-link">SHOP</NavLink>
-                    <NavLink to="/products?category=Essentials" className="nav-link">CATEGORIES</NavLink>
+                    <a href="/#categories" className="nav-link">CATEGORIES</a>
                     <a href="/#about" className="nav-link">ABOUT</a>
                 </div>
 
@@ -81,7 +81,7 @@ function Navbar() {
             <div className="collapse d-sm-none" id="mobileMenu">
                 <div className="mobile-menu-container">
                     <Link to="/products" className="mobile-nav-link">SHOP</Link>
-                    <Link to="/products?category=Essentials" className="mobile-nav-link">CATEGORIES</Link>
+                    <a href="/#categories" className="mobile-nav-link">CATEGORIES</a>
                     <a href="/#about" className="mobile-nav-link">ABOUT</a>
                     <Link to="/wishlist" className="mobile-nav-link">WISHLIST</Link>
                     <Link to={currentUser ? "/profile" : "/signin"} className="mobile-nav-link">
