@@ -1,0 +1,19 @@
+name: Package Atelier Project
+
+on:
+  push:
+    branches: [feature/img]
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create project ZIP
+        run: |
+          zip -r ATELIER-COMPLETE-CODE-modified.zip ATELIER-COMPLETE-CODE
+      - name: Upload project ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: ATELIER-COMPLETE-CODE-modified
+          path: ATELIER-COMPLETE-CODE-modified.zip
