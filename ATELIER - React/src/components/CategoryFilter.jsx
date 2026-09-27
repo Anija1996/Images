@@ -1,18 +1,11 @@
-function CategoryFilter({ category, setCategory }) {
-    const categories = ["All", "Shirts", "Jeans", "Outerwear", "Accessories", "Dresses", "Shoes"];
+import FilterDropdown from "./FilterDropdown";
 
+function CategoryFilter({ size, setSize, color, setColor, price, setPrice, sizes, colors, priceOptions }) {
     return (
-        <div className="category-filter">
-            {categories.map((item) => (
-                <button
-                    key={item}
-                    type="button"
-                    className={category === item ? "active" : ""}
-                    onClick={() => setCategory(item)}
-                >
-                    {item}
-                </button>
-            ))}
+        <div className="shop-filters-centered">
+            <FilterDropdown label="SIZE" value={size} options={sizes} onChange={setSize} />
+            <FilterDropdown label="COLOR" value={color} options={colors} onChange={setColor} />
+            <FilterDropdown label="PRICE" value={price} options={priceOptions} onChange={setPrice} />
         </div>
     );
 }

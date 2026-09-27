@@ -39,7 +39,9 @@ export default function Search() {
                         placeholder="SEARCH THE COLLECTION"
                         aria-label="Search the collection"
                         autoFocus
+                        maxLength={100}
                     />
+                    <span className="search-character-count">{query.length}/100</span>
                     <button type="submit">SEARCH</button>
                 </form>
             </section>

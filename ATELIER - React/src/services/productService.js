@@ -1,7 +1,7 @@
 import axios from "axios";
 import { productData } from "../data/products";
 
-const PRODUCTS_URL = "/data/products.json";
+const PRODUCTS_URL = `${import.meta.env.BASE_URL}data/products.json`;
 
 export async function getProducts() {
     try {
@@ -18,8 +18,7 @@ export async function getProducts() {
 
         return response.data;
     } catch (error) {
-        // Keep the collection available if the static JSON request is unavailable.
-        // Axios is still used for the backend/static API request as required.
+        // If products.json is not present, use the products already stored in src/data/products.js.
         if (Array.isArray(productData) && productData.length > 0) {
             return productData;
         }

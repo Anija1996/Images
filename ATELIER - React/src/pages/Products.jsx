@@ -2,7 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { getProducts } from "../services/productService";
 import ProductGrid from "../components/ProductGrid";
-import FilterDropdown from "../components/FilterDropdown";
+import CategoryFilter from "../components/CategoryFilter";
+import useProductFilters, { toValues } from "../hooks/useProductFilters";
 import "../styles/shop.css";
 
 const PRICE_OPTIONS = [
@@ -29,7 +30,7 @@ function Products() {
 
         getProducts()
             .then((data) => {
-                if (active) setProducts(data);
+                if (active) setProducts(Array.isArray(data) ? data : []);
             })
             .catch(() => {
                 if (active) {
@@ -49,30 +50,23 @@ function Products() {
     const category = searchParams.get("category") || "All";
 
     const sizes = useMemo(() => {
-        const values = products.flatMap((product) => product.sizes || []);
-        return [{ label: "ALL", value: "All" }, ...new Set(values).values()].map((item) =>
-            typeof item === "string" ? { label: item, value: item } : item
-        );
+        const values = products.flatMap((product) => toValues(product.sizes));
+        return [
+            { label: "ALL", value: "All" },
+            ...[...new Set(values)].map((value) => ({ label: value, value })),
+        ];
     }, [products]);
 
     const colors = useMemo(() => {
-        const values = products.flatMap((product) => product.colors || []);
-        return [{ label: "ALL", value: "All" }, ...new Set(values).values()].map((item) =>
-            typeof item === "string" ? { label: item, value: item } : item
-        );
+        const values = products.flatMap((product) => toValues(product.colors));
+        return [
+            { label: "ALL", value: "All" },
+            ...[...new Set(values)].map((value) => ({ label: value, value })),
+        ];
     }, [products]);
 
-    const filteredProducts = useMemo(() => products.filter((product) => {
-        const matchesCategory = category === "All" || category === "Essentials" || product.category === category;
-        const matchesSize = size === "All" || (product.sizes || []).includes(size);
-        const matchesColor = color === "All" || (product.colors || []).includes(color);
-        let matchesPrice = true;
-        if (price === "under-300") matchesPrice = product.price < 300;
-        if (price === "300-500") matchesPrice = product.price >= 300 && product.price <= 500;
-        if (price === "500-700") matchesPrice = product.price > 500 && product.price <= 700;
-        if (price === "700-plus") matchesPrice = product.price > 700;
-        return matchesCategory && matchesSize && matchesColor && matchesPrice;
-    }), [products, category, size, color, price]);
+    const filteredProducts = useProductFilters(products, category, size, color, price);
+
 
     const heading = category === "All" ? "Shop All" : category;
 
@@ -80,11 +74,17 @@ function Products() {
         <main className="shop-page">
             <section className="shop-header">
                 <h1>{heading}</h1>
-                <div className="shop-filters-centered">
-                    <FilterDropdown label="SIZE" value={size} options={sizes} onChange={setSize} />
-                    <FilterDropdown label="COLOR" value={color} options={colors} onChange={setColor} />
-                    <FilterDropdown label="PRICE" value={price} options={PRICE_OPTIONS} onChange={setPrice} />
-                </div>
+                <CategoryFilter
+                    size={size}
+                    setSize={setSize}
+                    color={color}
+                    setColor={setColor}
+                    price={price}
+                    setPrice={setPrice}
+                    sizes={sizes}
+                    colors={colors}
+                    priceOptions={PRICE_OPTIONS}
+                />
             </section>
 
             <section className="shop-products">
