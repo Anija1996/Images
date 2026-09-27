@@ -1,6 +1,8 @@
 import axios from "axios";
 import { productData } from "../data/products";
 
+// The product JSON is served as an HTTP endpoint from the app's public folder.
+// Axios is used for the request as required by the assignment.
 const PRODUCTS_URL = `${import.meta.env.BASE_URL}data/products.json`;
 
 export async function getProducts() {
@@ -13,12 +15,14 @@ export async function getProducts() {
         });
 
         if (!Array.isArray(response.data)) {
-            throw new Error("Products data is not an array.");
+            throw new Error("Invalid products response.");
         }
 
         return response.data;
     } catch (error) {
-        // If products.json is not present, use the products already stored in src/data/products.js.
+        // Keep the shop usable if the HTTP request is unavailable.
+        // This prevents the product page from becoming empty because of
+        // a temporary local/deployment request failure.
         if (Array.isArray(productData) && productData.length > 0) {
             return productData;
         }
